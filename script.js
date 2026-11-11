@@ -1,303 +1,196 @@
+/* =========================================
+   JOSEPH TOBY — PORTFOLIO INTERACTIONS
+========================================= */
 
-// ========================================
-// JOSEPH TOBY - PORTFOLIO JAVASCRIPT
-// ========================================
+document.addEventListener("DOMContentLoaded", () => {
 
+    // ELEMENTS
+    const header = document.getElementById("header");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const navItems = document.querySelectorAll(".nav-link");
+    const progressBar = document.getElementById("scrollProgress");
+    const backToTop = document.getElementById("backToTop");
+    const typingElement = document.getElementById("typing");
 
-// 1. MOBILE NAVIGATION
-
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-menuBtn.addEventListener("click", () => {
-
-    const isOpen = navLinks.classList.toggle("active");
-
-    menuBtn.innerHTML = isOpen
-        ? '<i class="fas fa-xmark"></i>'
-        : '<i class="fas fa-bars"></i>';
-
-    menuBtn.setAttribute("aria-expanded", isOpen);
-
-});
-
-
-// CLOSE MENU AFTER CLICKING A LINK
-
-document.querySelectorAll(".nav-link").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navLinks.classList.remove("active");
-
+    // MOBILE NAVIGATION
+    function closeMenu() {
+        navLinks.classList.remove("open");
         menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        menuBtn.setAttribute("aria-expanded", "false");
-
-    });
-
-});
-
-
-// 2. TYPING ANIMATION
-
-const typingElement = document.getElementById("typing");
-
-const roles = [
-    "Python Developer",
-    "Data Science Enthusiast",
-    "AI Explorer",
-    "Flutter Developer",
-    "Data Analyst"
-];
-
-let roleIndex = 0;
-let characterIndex = 0;
-let deleting = false;
-
-function typingEffect() {
-
-    const currentRole = roles[roleIndex];
-
-    typingElement.textContent =
-        currentRole.substring(0, characterIndex);
-
-    if (!deleting) {
-
-        characterIndex++;
-
-        if (characterIndex > currentRole.length) {
-
-            deleting = true;
-
-            setTimeout(typingEffect, 1500);
-            return;
-
-        }
-
-    } else {
-
-        characterIndex--;
-
-        if (characterIndex < 0) {
-
-            characterIndex = 0;
-            deleting = false;
-
-            roleIndex = (roleIndex + 1) % roles.length;
-
-        }
-
+        menuBtn.setAttribute("aria-label", "Open navigation");
     }
 
-    setTimeout(
-        typingEffect,
-        deleting ? 45 : 90
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+
+        const isOpen = navLinks.classList.contains("open");
+
+        menuBtn.innerHTML = isOpen
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+
+        menuBtn.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
+    });
+
+    navItems.forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", event => {
+        if (
+            !navLinks.contains(event.target) &&
+            !menuBtn.contains(event.target)
+        ) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    // TYPING ANIMATION
+    const roles = [
+        "Python Developer",
+        "AI & ML Enthusiast",
+        "Flutter Developer",
+        "Data Analytics Explorer"
+    ];
+
+    let roleIndex = 0;
+    let characterIndex = 0;
+    let deleting = false;
+
+    function typeEffect() {
+        if (!typingElement) return;
+
+        const currentRole = roles[roleIndex];
+
+        if (deleting) {
+            characterIndex--;
+        } else {
+            characterIndex++;
+        }
+
+        typingElement.textContent = currentRole.substring(
+            0,
+            characterIndex
+        );
+
+        let delay = deleting ? 45 : 85;
+
+        if (!deleting && characterIndex === currentRole.length) {
+            deleting = true;
+            delay = 1500;
+        } else if (deleting && characterIndex === 0) {
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            delay = 400;
+        }
+
+        setTimeout(typeEffect, delay);
+    }
+
+    typeEffect();
+
+    // SCROLL REVEAL ANIMATION
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: "0px 0px -40px 0px"
+        }
     );
 
-}
+    revealElements.forEach((element, index) => {
+        element.style.transitionDelay =
+            `${(index % 4) * 100}ms`;
 
-typingEffect();
+        revealObserver.observe(element);
+    });
 
+    // SCROLL EFFECTS
+    function handleScroll() {
+        const scrollTop =
+            window.scrollY ||
+            document.documentElement.scrollTop;
 
-// 3. SCROLL REVEAL ANIMATION
+        const documentHeight =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight;
 
-const revealElements = document.querySelectorAll(".reveal");
+        const progress =
+            documentHeight > 0
+                ? (scrollTop / documentHeight) * 100
+                : 0;
 
-const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
+        progressBar.style.width = `${progress}%`;
 
-        entries.forEach(entry => {
+        // Header background
+        header.classList.toggle("scrolled", scrollTop > 40);
 
-            if (entry.isIntersecting) {
+        // Back to top visibility
+        backToTop.classList.toggle("show", scrollTop > 500);
 
-                entry.target.classList.add("show");
+        // Active navigation
+        updateActiveNavigation();
+    }
 
-                observer.unobserve(entry.target);
+    // ACTIVE NAVIGATION
+    function updateActiveNavigation() {
+        const sections = document.querySelectorAll("main section[id]");
+        let currentSection = "home";
 
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 180;
+
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.id;
             }
-
         });
 
-    },
-    {
-        threshold: 0.12,
-        rootMargin: "0px 0px -30px 0px"
-    }
-);
+        navItems.forEach(link => {
+            link.classList.remove("active");
 
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-// 4. PROJECT FILTERING
-
-const filterButtons = document.querySelectorAll(".filter-btn");
-
-const projectCards = document.querySelectorAll(".project-card");
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const filter = button.dataset.filter;
-
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        projectCards.forEach(card => {
-
-            const category = card.dataset.category;
-
-            const matches =
-                filter === "all" || category === filter;
-
-            card.classList.toggle("hidden", !matches);
-
-        });
-
-    });
-
-});
-
-
-// 5. SCROLL PROGRESS BAR
-
-const progressBar =
-    document.getElementById("scrollProgress");
-
-function updateScrollProgress() {
-
-    const scrollTop = window.scrollY;
-
-    const documentHeight =
-        document.documentElement.scrollHeight -
-        window.innerHeight;
-
-    const progress = documentHeight > 0
-        ? (scrollTop / documentHeight) * 100
-        : 0;
-
-    progressBar.style.width = progress + "%";
-
-}
-
-window.addEventListener(
-    "scroll",
-    updateScrollProgress,
-    { passive: true }
-);
-
-
-// 6. BACK TO TOP BUTTON
-
-const backToTop =
-    document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 500) {
-
-        backToTop.classList.add("visible");
-
-    } else {
-
-        backToTop.classList.remove("visible");
-
-    }
-
-}, { passive: true });
-
-backToTop.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-
-// 7. ACTIVE NAVIGATION ON SCROLL
-
-const sections = document.querySelectorAll(
-    "main section[id]"
-);
-
-const navigationLinks =
-    document.querySelectorAll(".nav-link");
-
-const sectionObserver = new IntersectionObserver(
-    entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                const currentId = entry.target.id;
-
-                navigationLinks.forEach(link => {
-
-                    link.classList.toggle(
-                        "active",
-                        link.getAttribute("href") === "#" + currentId
-                    );
-
-                });
-
+            if (link.getAttribute("href") === `#${currentSection}`) {
+                link.classList.add("active");
             }
-
         });
-
-    },
-    {
-        rootMargin: "-30% 0px -60% 0px"
     }
-);
 
-sections.forEach(section => {
-
-    sectionObserver.observe(section);
-
-});
-
-
-// 8. AUTOMATIC COPYRIGHT YEAR
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-// 9. PROFILE IMAGE FALLBACK
-
-const profilePhoto = document.querySelector(".profile-photo");
-
-profilePhoto.addEventListener("error", () => {
-
-    profilePhoto.style.display = "none";
-
-    document.getElementById(
-        "profileFallback"
-    ).style.display = "grid";
-
-});
-
-
-// 10. PREVENT EMPTY PLACEHOLDER LINKS
-
-document.querySelectorAll('a[href*="YOUR_"]').forEach(link => {
-
-    link.addEventListener("click", event => {
-
-        event.preventDefault();
-
-        alert("Please add your actual profile or contact link.");
-
+    window.addEventListener("scroll", handleScroll, {
+        passive: true
     });
+
+    handleScroll();
+
+    // BACK TO TOP
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    // DYNAMIC COPYRIGHT YEAR
+    const yearElement = document.getElementById("year");
+
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 
 });
