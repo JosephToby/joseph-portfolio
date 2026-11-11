@@ -1,0 +1,1234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#08090d">
+    <meta name="description" content="Joseph Toby - BCA student, Python Developer, Data Science and AI enthusiast. Explore my projects, internship, technical skills and experience.">
+
+    <title>Joseph Toby | Personal Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="noise"></div>
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAVIGATION -->
+
+<header class="header" id="header">
+    <nav class="navbar container">
+
+        <a href="#home" class="logo">
+            JT<span>.</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a href="resume.pdf" download class="nav-resume">
+            Resume <i class="fas fa-arrow-down"></i>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+    </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero container" id="home">
+
+    <div class="hero-content reveal">
+
+        <div class="availability">
+            <span class="status-dot"></span>
+            COMPUTER APPLICATIONS STUDENT
+        </div>
+
+        <p class="hero-small">HELLO, I'M</p>
+
+        <h1>
+            Joseph<br>
+            <span class="gradient-text">Toby.</span>
+        </h1>
+
+        <div class="hero-role">
+            <span id="typing"></span><span class="typing-cursor">|</span>
+        </div>
+
+        <p class="hero-description">
+            I build digital experiences through code,
+            explore intelligent technologies and transform
+            data into meaningful insights.
+
+            Passionate about Python development,
+            Artificial Intelligence and Data Science.
+        </p>
+
+        <div class="hero-actions">
+
+            <a href="#projects" class="btn btn-primary">
+                Explore my work
+                <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+
+            <a href="resume.pdf" download class="btn btn-outline">
+                Download resume
+                <i class="fas fa-download"></i>
+            </a>
+
+        </div>
+
+        <div class="hero-socials">
+
+            <a href="https://github.com/JosephToby"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="mailto:YOUR_EMAIL"
+               aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- PROFILE -->
+
+    <div class="hero-visual reveal">
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="profile-frame">
+
+            <img
+                src="assets/profile.jpg"
+                alt="Joseph Toby"
+                class="profile-photo"
+                onerror="this.style.display='none';document.getElementById('profileFallback').style.display='grid';"
+            >
+
+            <div class="profile-fallback" id="profileFallback">
+                JT
+            </div>
+
+        </div>
+
+        <div class="floating-tag tag-top">
+            <i class="fab fa-python"></i>
+            Python Developer
+        </div>
+
+        <div class="floating-tag tag-bottom">
+            <i class="fas fa-brain"></i>
+            AI Enthusiast
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MARQUEE -->
+
+<div class="marquee">
+    <div class="marquee-track">
+        <span>PYTHON</span><i>✦</i>
+        <span>ARTIFICIAL INTELLIGENCE</span><i>✦</i>
+        <span>DATA SCIENCE</span><i>✦</i>
+        <span>FLUTTER</span><i>✦</i>
+        <span>WEB DEVELOPMENT</span><i>✦</i>
+        <span>PYTHON</span><i>✦</i>
+        <span>ARTIFICIAL INTELLIGENCE</span><i>✦</i>
+        <span>DATA SCIENCE</span><i>✦</i>
+        <span>FLUTTER</span><i>✦</i>
+        <span>WEB DEVELOPMENT</span><i>✦</i>
+    </div>
+</div>
+
+<!-- ABOUT -->
+
+<section class="section container" id="about">
+
+    <div class="section-heading reveal">
+        <span class="section-number">01 / ABOUT</span>
+        <h2>A little about <span>me.</span></h2>
+        <p>My background, interests and what drives me.</p>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-main glass-card reveal">
+
+            <span class="eyebrow">WHO I AM</span>
+
+            <h3>
+                Curious mind.<br>
+                Creative developer.
+            </h3>
+
+            <p>
+                I'm Joseph Toby, a Bachelor of Computer
+                Applications student at Marian College
+                Kuttikkanam, Kerala.
+
+                I have a strong interest in software
+                development, Artificial Intelligence,
+                Machine Learning and Data Analytics.
+
+                My learning journey involves building
+                practical applications, exploring new
+                technologies and understanding how
+                software can solve everyday problems.
+
+                I enjoy working across different areas
+                of technology, from developing Flutter
+                applications to building Python-based
+                web solutions and analysing data.
+
+                Alongside my academic and technical 
+                interests, I am also a beginner in 
+                playback singing, exploring opportunities
+                to learn and grow in the music industry.
+            </p>
+
+        </div>
+
+        <div class="about-side reveal">
+
+            <div class="info-card glass-card">
+                <span class="info-label">EDUCATION</span>
+                <h4>Bachelor of Computer Applications</h4>
+                <p>Marian College Kuttikkanam</p>
+            </div>
+
+            <div class="info-card glass-card">
+                <span class="info-label">PRIMARY INTERESTS</span>
+                <h4>Development & Intelligent Systems</h4>
+                <p>Python · AI · Data Science · Flutter</p>
+            </div>
+
+            <div class="info-card glass-card">
+                <span class="info-label">LOCATION</span>
+                <h4>Kerala, India</h4>
+                <p>Open to learning and opportunities</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUICK HIGHLIGHTS -->
+
+<section class="highlights container">
+
+    <div class="highlight-item reveal">
+        <span class="highlight-icon"><i class="fas fa-code"></i></span>
+        <h3>Development</h3>
+        <p>Building practical applications</p>
+    </div>
+
+    <div class="highlight-item reveal">
+        <span class="highlight-icon"><i class="fas fa-brain"></i></span>
+        <h3>Artificial Intelligence</h3>
+        <p>Exploring intelligent technologies</p>
+    </div>
+
+    <div class="highlight-item reveal">
+        <span class="highlight-icon"><i class="fas fa-chart-line"></i></span>
+        <h3>Data Analytics</h3>
+        <p>Turning data into insights</p>
+    </div>
+
+    <div class="highlight-item reveal">
+        <span class="highlight-icon"><i class="fas fa-mobile-screen"></i></span>
+        <h3>App Development</h3>
+        <p>Creating mobile experiences</p>
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="section container" id="skills">
+
+    <div class="section-heading reveal">
+        <span class="section-number">02 / SKILLS</span>
+        <h2>My technical <span>toolkit.</span></h2>
+        <p>Technologies and tools I have worked with.</p>
+    </div>
+
+    <div class="skills-layout">
+
+        <div class="skill-category glass-card reveal">
+            <div class="category-heading">
+                <i class="fas fa-terminal"></i>
+                <h3>Programming</h3>
+            </div>
+
+            <div class="skill-list">
+                <span>Python</span>
+                <span>Dart</span>
+                <span>SQL</span>
+            </div>
+        </div>
+
+        <div class="skill-category glass-card reveal">
+            <div class="category-heading">
+                <i class="fas fa-globe"></i>
+                <h3>Web Development</h3>
+            </div>
+
+            <div class="skill-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Flask</span>
+                <span>Django</span>
+                <span>Jinja</span>
+                <span>Bootstrap</span>
+            </div>
+        </div>
+
+        <div class="skill-category glass-card reveal">
+            <div class="category-heading">
+                <i class="fas fa-mobile-screen"></i>
+                <h3>App Development</h3>
+            </div>
+
+            <div class="skill-list">
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>Provider</span>
+                <span>BLoC / Cubit</span>
+                <span>Responsive UI</span>
+            </div>
+        </div>
+
+        <div class="skill-category glass-card reveal">
+            <div class="category-heading">
+                <i class="fas fa-database"></i>
+                <h3>Data & Database</h3>
+            </div>
+
+            <div class="skill-list">
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>SQLite</span>
+                <span>SQLAlchemy</span>
+                <span>Hive</span>
+            </div>
+        </div>
+
+        <div class="skill-category glass-card reveal">
+            <div class="category-heading">
+                <i class="fas fa-brain"></i>
+                <h3>AI & Machine Learning</h3>
+            </div>
+
+            <div class="skill-list">
+                <span>Machine Learning</span>
+                <span>SVM</span>
+                <span>KNN</span>
+                <span>Generative AI</span>
+                <span>RAG</span>
+                <span>NLP</span>
+            </div>
+        </div>
+
+        <div class="skill-category glass-card reveal">
+            <div class="category-heading">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Analytics & Tools</h3>
+            </div>
+
+            <div class="skill-list">
+                <span>Power BI</span>
+                <span>Tableau</span>
+                <span>Matplotlib</span>
+                <span>Seaborn</span>
+                <span>UiPath RPA</span>
+                <span>Git & GitHub</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="section container" id="experience">
+
+    <div class="section-heading reveal">
+        <span class="section-number">03 / EXPERIENCE</span>
+        <h2>Where I've <span>learned.</span></h2>
+        <p>My professional training and practical exposure.</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-content glass-card">
+
+                <span class="date-label">
+                    2026 · 8 WEEKS · 240 HOURS
+                </span>
+
+                <h3>Data Science & Artificial Intelligence Intern</h3>
+
+                <h4>IPSR Solutions Limited · Kottayam</h4>
+
+                <p>
+                    Completed an eight-week internship
+                    focused on Data Science, Artificial
+                    Intelligence, Machine Learning and
+                    Python-based application development.
+                </p>
+
+                <div class="experience-points">
+
+                    <span>Data Analytics with Power BI</span>
+                    <span>NumPy & Pandas</span>
+                    <span>Machine Learning – SVM & KNN</span>
+                    <span>Data Preparation for ML</span>
+                    <span>RAG-based Chatbot Development</span>
+                    <span>Django Web Development</span>
+                    <span>Generative AI Image Creation</span>
+
+                </div>
+
+                <p class="completion">
+                    <i class="fas fa-check-circle"></i>
+                    Completed on 29 May 2026
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURED PROJECT -->
+
+<section class="section container" id="featured-project">
+
+    <div class="section-heading reveal">
+        <span class="section-number">04 / FEATURED WORK</span>
+        <h2>Something I've <span>built.</span></h2>
+        <p>A closer look at my latest application.</p>
+    </div>
+
+    <article class="featured-card reveal">
+
+        <div class="featured-info">
+
+            <span class="featured-label">
+                <span class="status-dot"></span>
+                LATEST PROJECT · 2026
+            </span>
+
+            <h3>FitTrack<span>.</span></h3>
+
+            <h4>Workout Recording & Personal Analysis App</h4>
+
+            <p>
+                FitTrack is a modern fitness tracking
+                application developed using Flutter
+                and Dart.
+
+                It helps users record workouts, manage
+                exercise history, monitor fitness activity
+                and understand their progress through
+                personal analytics and visual reports.
+
+                Workout records are stored locally
+                using Hive.
+            </p>
+
+            <div class="featured-tech">
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>Hive</span>
+                <span>Material Design</span>
+                <span>VS Code</span>
+            </div>
+
+            <div class="featured-buttons">
+
+                <a href="https://github.com/JosephToby/FitTrack-Flutter"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="btn btn-primary">
+                    <i class="fab fa-github"></i>
+                    Explore Repository
+                </a>
+
+                <a href="https://github.com/JosephToby/FitTrack-Flutter"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-link">
+                    Source Code <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="featured-preview">
+
+            <img
+                src="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/dashboard.png.png"
+                alt="FitTrack application dashboard"
+                loading="lazy"
+            >
+
+        </div>
+
+    </article>
+
+    <div class="fittrack-gallery">
+
+        <a href="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/add-workout.png.png"
+           target="_blank" class="gallery-item reveal">
+            <img src="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/add-workout.png.png"
+                 alt="FitTrack add workout screen" loading="lazy">
+            <span>Add Workout</span>
+        </a>
+
+        <a href="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/analytics.png.png"
+           target="_blank" class="gallery-item reveal">
+            <img src="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/analytics.png.png"
+                 alt="FitTrack analytics screen" loading="lazy">
+            <span>Analytics</span>
+        </a>
+
+        <a href="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/weekly-progress.png.png"
+           target="_blank" class="gallery-item reveal">
+            <img src="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/weekly-progress.png.png"
+                 alt="FitTrack weekly progress" loading="lazy">
+            <span>Weekly Progress</span>
+        </a>
+
+        <a href="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/workout-history.png.png"
+           target="_blank" class="gallery-item reveal">
+            <img src="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/workout-history.png.png"
+                 alt="FitTrack workout history" loading="lazy">
+            <span>Workout History</span>
+        </a>
+
+        <a href="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/profile.png.png"
+           target="_blank" class="gallery-item reveal">
+            <img src="https://raw.githubusercontent.com/JosephToby/FitTrack-Flutter/main/profile.png.png"
+                 alt="FitTrack profile screen" loading="lazy">
+            <span>Profile</span>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+
+
+<!-- SELECTED PROJECTS -->
+<section class="section container selected-projects" id="projects">
+
+    <div class="section-heading reveal">
+        <span class="section-number">04 / SELECTED WORK</span>
+        <h2>Projects built with <span>purpose.</span></h2>
+        <p>A selection of my work across application development, machine learning and mobile technology.</p>
+    </div>
+
+    <div class="selected-projects-grid">
+
+        <!-- PROJECT 01 -->
+        <article class="selected-project-card project-java reveal">
+
+            <div class="project-card-top">
+                <span class="project-index">01</span>
+                <span class="project-domain">
+                    <i class="fa-brands fa-java"></i>
+                    DESKTOP APPLICATION
+                </span>
+            </div>
+
+            <div class="project-visual java-visual">
+                <div class="visual-window">
+                    <div class="visual-window-bar">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="bus-visual-icon">
+                        <i class="fa-solid fa-bus-simple"></i>
+                    </div>
+                    <div class="seat-row">
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <div class="seat-row">
+                        <i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <div class="visual-caption">BOOK YOUR JOURNEY</div>
+                </div>
+            </div>
+
+            <div class="project-card-body">
+                <p class="project-kicker">JAVA · JAVA SWING</p>
+                <h3>Bus Ticket Booking System</h3>
+
+                <p class="project-description">
+                    A Java Swing-based application for booking bus tickets
+                    through a graphical interface, with AC and Non-AC bus
+                    options and separate seat management.
+                </p>
+
+                <div class="project-tech-list">
+                    <span>Java</span>
+                    <span>Java Swing</span>
+                    <span>GUI</span>
+                </div>
+
+                <a class="project-visit"
+                   href="https://github.com/JosephToby/Bus-ticket-booking-system"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore repository
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 02 -->
+        <article class="selected-project-card project-ai reveal">
+
+            <div class="project-card-top">
+                <span class="project-index">02</span>
+                <span class="project-domain">
+                    <i class="fa-solid fa-brain"></i>
+                    MACHINE LEARNING
+                </span>
+            </div>
+
+            <div class="project-visual ai-visual">
+                <div class="ai-visual-inner">
+
+                    <div class="scan-orbit orbit-a"></div>
+                    <div class="scan-orbit orbit-b"></div>
+
+                    <div class="scan-core">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div class="scan-label label-one">
+                        <i class="fa-solid fa-message"></i>
+                        MESSAGE
+                    </div>
+
+                    <div class="scan-label label-two">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        SPAM CHECK
+                    </div>
+
+                    <div class="scan-result">
+                        <span></span> CLASSIFICATION READY
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="project-card-body">
+                <p class="project-kicker">PYTHON · NLP · CLASSIFICATION</p>
+                <h3>Spam Message Detection</h3>
+
+                <p class="project-description">
+                    An NLP-based machine learning project that classifies
+                    messages as spam or legitimate using TF-IDF vectorization
+                    and the Multinomial Naive Bayes algorithm.
+                </p>
+
+                <div class="project-tech-list">
+                    <span>Python</span>
+                    <span>TF-IDF</span>
+                    <span>Naive Bayes</span>
+                    <span>NLP</span>
+                </div>
+
+                <a class="project-visit"
+                   href="https://github.com/JosephToby/Spam-Message-Detection-NLP"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore repository
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+        </article>
+
+
+        <!-- PROJECT 03 -->
+        <article class="selected-project-card project-flutter reveal">
+
+            <div class="project-card-top">
+                <span class="project-index">03</span>
+                <span class="project-domain">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    MOBILE APPLICATION
+                </span>
+            </div>
+
+            <div class="project-visual fittrack-visual">
+
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+
+                    <div class="phone-screen">
+                        <div class="phone-greeting">Your activity</div>
+
+                        <div class="phone-stat">
+                            <strong>WEEKLY</strong>
+                            <span>PROGRESS</span>
+                        </div>
+
+                        <div class="mini-chart">
+                            <i></i><i></i><i></i><i></i>
+                            <i></i><i></i><i></i>
+                        </div>
+
+                        <div class="phone-workout">
+                            <span><i class="fa-solid fa-dumbbell"></i></span>
+                            <b>Workout history</b>
+                        </div>
+
+                        <div class="phone-workout">
+                            <span><i class="fa-solid fa-chart-line"></i></span>
+                            <b>Personal analytics</b>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="fittrack-orbit orbit-left"></span>
+                <span class="fittrack-orbit orbit-right"></span>
+
+            </div>
+
+            <div class="project-card-body">
+                <p class="project-kicker">FLUTTER · DART · HIVE</p>
+                <h3>FitTrack</h3>
+
+                <p class="project-description">
+                    A fitness tracking application featuring workout
+                    management, workout history, personal analytics
+                    and local data storage using Hive.
+                </p>
+
+                <div class="project-tech-list">
+                    <span>Flutter</span>
+                    <span>Dart</span>
+                    <span>Hive</span>
+                </div>
+
+                <a class="project-visit"
+                   href="https://github.com/JosephToby/FitTrack-Flutter"
+                   target="_blank" rel="noopener noreferrer">
+                    Explore repository
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+        </article>
+
+    </div>
+
+    <div class="projects-footer reveal">
+        <span>MORE CODE, MORE LEARNING, MORE TO BUILD.</span>
+
+        <a href="https://github.com/JosephToby"
+           target="_blank" rel="noopener noreferrer">
+            View all repositories
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+    </div>
+
+</section>
+
+
+        <!-- COLLEGE MANAGEMENT -->
+
+        <article class="project-card reveal" data-category="web">
+
+            <div class="project-top">
+                <div class="project-icon"><i class="fas fa-building-columns"></i></div>
+                <span class="project-type">WEB APPLICATION</span>
+            </div>
+
+            <h3>College Management System</h3>
+
+            <p>
+                A Flask-based application for student
+                and teacher record management with
+                forms, database integration and
+                CRUD operations.
+            </p>
+
+            <div class="project-tags">
+                <span>Python</span>
+                <span>Flask</span>
+                <span>SQLAlchemy</span>
+                <span>SQLite</span>
+            </div>
+
+            <a href="https://github.com/JosephToby"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+                Explore on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        <!-- MENTAL HEALTH ANALYTICS -->
+
+        <article class="project-card reveal" data-category="data">
+
+            <div class="project-top">
+                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                <span class="project-type">DATA ANALYTICS</span>
+            </div>
+
+            <h3>Mental Health Data Analysis</h3>
+
+            <p>
+                Exploratory analysis of a dataset
+                containing approximately 300,000
+                records, examining stress, sleep,
+                screen time and lifestyle indicators.
+            </p>
+
+            <div class="project-tags">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+                <span>Seaborn</span>
+            </div>
+
+            <a href="https://github.com/JosephToby"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+                Explore on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        <!-- DJANGO -->
+
+        <article class="project-card reveal" data-category="web">
+
+            <div class="project-top">
+                <div class="project-icon"><i class="fas fa-layer-group"></i></div>
+                <span class="project-type">WEB DEVELOPMENT</span>
+            </div>
+
+            <h3>Django Product Management</h3>
+
+            <p>
+                A Django development project using
+                generic class-based views for product
+                listing, details, creation, updating
+                and deletion.
+            </p>
+
+            <div class="project-tags">
+                <span>Python</span>
+                <span>Django</span>
+                <span>HTML</span>
+                <span>Templates</span>
+            </div>
+
+            <a href="https://github.com/JosephToby"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+                Explore on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        <!-- RAG CHATBOT -->
+
+        <article class="project-card reveal" data-category="data">
+
+            <div class="project-top">
+                <div class="project-icon"><i class="fas fa-robot"></i></div>
+                <span class="project-type">AI DEVELOPMENT</span>
+            </div>
+
+            <h3>RAG-based AI Chatbot</h3>
+
+            <p>
+                Retrieval-Augmented Generation
+                chatbot development explored during
+                internship training in Artificial
+                Intelligence.
+            </p>
+
+            <div class="project-tags">
+                <span>Python</span>
+                <span>Generative AI</span>
+                <span>RAG</span>
+            </div>
+
+            <a href="https://github.com/JosephToby"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+                Explore on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        <!-- DATA VISUALIZATION -->
+
+        <article class="project-card reveal" data-category="data">
+
+            <div class="project-top">
+                <div class="project-icon"><i class="fas fa-chart-pie"></i></div>
+                <span class="project-type">BUSINESS INTELLIGENCE</span>
+            </div>
+
+            <h3>Data Visualization & BI</h3>
+
+            <p>
+                Analytics exercises involving Daikibo
+                telemetry data and Equality Table
+                datasets, using business intelligence
+                and visualization tools.
+            </p>
+
+            <div class="project-tags">
+                <span>Power BI</span>
+                <span>Tableau</span>
+                <span>Data Analytics</span>
+            </div>
+
+            <a href="https://github.com/JosephToby"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+                Explore on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        <!-- BLOC -->
+
+        <article class="project-card reveal" data-category="app">
+
+            <div class="project-top">
+                <div class="project-icon"><i class="fas fa-cubes"></i></div>
+                <span class="project-type">FLUTTER DEVELOPMENT</span>
+            </div>
+
+            <h3>Flutter BLoC & Cubit</h3>
+
+            <p>
+                State management practical work
+                exploring BLoC, Cubit, BlocListener,
+                BlocObserver, HydratedBloc and
+                ReplayBloc.
+            </p>
+
+            <div class="project-tags">
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>BLoC</span>
+            </div>
+
+            <a href="https://github.com/JosephToby"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+                Explore on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+        <!-- RESPONSIVE FLUTTER -->
+
+        <article class="project-card reveal" data-category="app">
+
+            <div class="project-top">
+                <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+                <span class="project-type">RESPONSIVE DEVELOPMENT</span>
+            </div>
+
+            <h3>Responsive College Details App</h3>
+
+            <p>
+                A Flutter application exploring
+                responsive user interface development
+                with LayoutBuilder and adaptive layouts.
+            </p>
+
+            <div class="project-tags">
+                <span>Flutter</span>
+                <span>Dart</span>
+                <span>LayoutBuilder</span>
+            </div>
+
+            <a href="https://github.com/JosephToby"
+               target="_blank" rel="noopener noreferrer"
+               class="project-link">
+                Explore on GitHub <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ACADEMIC EXPLORATION -->
+
+<section class="section container" id="academic">
+
+    <div class="section-heading reveal">
+        <span class="section-number">06 / TECHNICAL EXPLORATION</span>
+        <h2>Beyond the <span>projects.</span></h2>
+        <p>Additional technical subjects and practical exercises.</p>
+    </div>
+
+    <div class="academic-grid">
+
+        <div class="academic-card glass-card reveal">
+            <i class="fas fa-language"></i>
+            <h3>Natural Language Processing</h3>
+            <p>
+                Tokenization, text preprocessing,
+                stemming, lemmatization, TF-IDF,
+                N-grams, POS tagging, WordNet,
+                cosine similarity and parsing.
+            </p>
+        </div>
+
+        <div class="academic-card glass-card reveal">
+            <i class="fas fa-database"></i>
+            <h3>Database & Backend</h3>
+            <p>
+                SQLAlchemy ORM, SQLite databases,
+                Flask-WTF forms, Django CRUD,
+                database models and application routing.
+            </p>
+        </div>
+
+        <div class="academic-card glass-card reveal">
+            <i class="fas fa-chart-area"></i>
+            <h3>Data Visualization</h3>
+            <p>
+                Data cleaning, exploratory analysis,
+                charts, scatterplots, trend analysis
+                and dashboard exercises.
+            </p>
+        </div>
+
+        <div class="academic-card glass-card reveal">
+            <i class="fas fa-network-wired"></i>
+            <h3>Cloud & Automation</h3>
+            <p>
+                Learning exposure to Google Cloud,
+                Kubernetes, Cloud Run, Cloud Storage,
+                IAM and UiPath automation.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section class="section container" id="education">
+
+    <div class="section-heading reveal">
+        <span class="section-number">07 / EDUCATION</span>
+        <h2>Academic <span>journey.</span></h2>
+    </div>
+
+    <div class="education-card glass-card reveal">
+
+        <div class="education-icon">
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+
+        <div>
+            <span class="date-label">UNDERGRADUATE EDUCATION</span>
+
+            <h3>Bachelor of Computer Applications</h3>
+
+            <h4>Marian College Kuttikkanam</h4>
+
+            <p>
+                Pursuing undergraduate studies in Computer
+                Applications with a focus on programming,
+                software development, databases,
+                application development and emerging
+                technologies.
+            </p>
+
+            <span class="education-location">
+                Kerala, India
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section class="section container" id="certifications">
+
+    <div class="section-heading reveal">
+        <span class="section-number">08 / CERTIFICATIONS</span>
+        <h2>Learning & <span>achievements.</span></h2>
+    </div>
+
+    <div class="cert-grid">
+
+        <div class="cert-card glass-card reveal">
+            <i class="fas fa-certificate"></i>
+            <div>
+                <h3>Data Analytics Virtual Experience</h3>
+                <p>Deloitte</p>
+                <span>Job Simulation</span>
+            </div>
+        </div>
+
+        <div class="cert-card glass-card reveal">
+            <i class="fas fa-award"></i>
+            <div>
+                <h3>AI in Action</h3>
+                <p>Vista Equity Partners</p>
+                <span>Job Simulation</span>
+            </div>
+        </div>
+
+        <div class="cert-card glass-card reveal">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+                <h3>Data Science & AI Internship</h3>
+                <p>IPSR Solutions Limited</p>
+                <span>8 Weeks · 240 Hours</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section container" id="contact">
+
+    <div class="contact-box reveal">
+
+        <span class="section-number">09 / GET IN TOUCH</span>
+
+        <h2>
+            Let's build something<br>
+            <span class="gradient-text">meaningful.</span>
+        </h2>
+
+        <p>
+            Interested in collaborating, discussing
+            technology or exploring opportunities?
+            I'd love to connect.
+        </p>
+
+        <a href="mailto:YOUR_EMAIL" class="btn btn-primary">
+            Say Hello <i class="fas fa-paper-plane"></i>
+        </a>
+
+        <div class="contact-socials">
+
+            <a href="https://github.com/JosephToby"
+               target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/joseph-toby-237a25318/"
+               target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+
+            <a href="mailto:joe1ty7788@gmail.com">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <a href="#home" class="logo">JT<span>.</span></a>
+
+    <p>Designed & developed by Joseph Toby.</p>
+
+    <p>© <span id="year"></span> All rights reserved.</p>
+
+</footer>
+
+<!-- BACK TO TOP -->
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
